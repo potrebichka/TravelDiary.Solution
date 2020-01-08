@@ -14,12 +14,18 @@ namespace TravelDiary.Models
         {
             this.CityName = cityName;
             this.LengthOfStay = lengthOfStay;
+            places.Add(this);
             this.Id = places.Count;
         }
 
         public static void ClearAll()
         {
             places.Clear();
+        }
+
+        public static List<Place> GetAll()
+        {
+            return places;
         }
 
     }

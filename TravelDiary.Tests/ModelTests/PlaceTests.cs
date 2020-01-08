@@ -20,6 +20,20 @@ namespace TravelDiary.TestTools
             Assert.AreEqual(typeof(Place), newPlace.GetType());
         }
 
+        [TestMethod]
+        public void GetAll_ReturnsAllItems_PlaceList()
+        {
+
+            Place.ClearAll();
+            Place instance1 = new Place("Denver", 13);
+            Place instance2 = new Place("Seattle", 12);
+
+            List<Place> newList = new List<Place> { instance1, instance2 };
+            List<Place> result = Place.GetAll();
+            Console.WriteLine(result);
+            CollectionAssert.AreEqual(newList, result);
+        }
+
         
     }
 }
