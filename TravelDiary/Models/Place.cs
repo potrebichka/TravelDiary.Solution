@@ -28,6 +28,11 @@ namespace TravelDiary.Models
             return places;
         }
 
+        public static Place Find(int searchId)
+        {
+            return places[searchId -1];
+        }
+
     }
 }
 

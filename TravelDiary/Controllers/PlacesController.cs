@@ -36,7 +36,7 @@ namespace TravelDiary.Controllers
         [HttpGet("/places/{id}")]
         public ActionResult Show(int id)
         {
-        Item foundItem = Place.Find(id);
+        Place foundItem = Place.Find(id);
         return View(foundItem);
         }
 

@@ -23,8 +23,6 @@ namespace TravelDiary.TestTools
         [TestMethod]
         public void GetAll_ReturnsAllItems_PlaceList()
         {
-
-            Place.ClearAll();
             Place instance1 = new Place("Denver", 13);
             Place instance2 = new Place("Seattle", 12);
 
@@ -33,7 +31,6 @@ namespace TravelDiary.TestTools
             Console.WriteLine(result);
             CollectionAssert.AreEqual(newList, result);
         }
-
-        
+       
     }
 }
