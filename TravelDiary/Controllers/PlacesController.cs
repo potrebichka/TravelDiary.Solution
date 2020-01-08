@@ -25,5 +25,20 @@ namespace TravelDiary.Controllers
             Place myPlaces = new Place(city, lengthOfStay);
             return RedirectToAction("Index");
         }
+
+        [HttpPost("/places/delete")]
+        public ActionResult DeleteAll()
+        {
+            Place.ClearAll();
+            return View();
+        }
+
+        [HttpGet("/places/{id}")]
+        public ActionResult Show(int id)
+        {
+        Item foundItem = Place.Find(id);
+        return View(foundItem);
+        }
+
     }
 }
