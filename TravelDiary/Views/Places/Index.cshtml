@@ -1,0 +1,27 @@
+@using TravelDiary.Models;
+
+<h2>Travel Diary</h2>
+
+@if (Model.Count == 0)
+{
+    <p>There are no places in your list.</p>
+}
+
+<ul>
+    @foreach(Place city in Model)
+    {
+        <li>
+            <a href="/places/@city.Id">City: @city.CityName</a>
+            <p>Length of Stay: @city.LengthOfStay</p>
+        </li>
+    }
+</ul>
+
+<a href="/places/new">Add a new item.</a>
+
+<br>
+<br>
+
+<form action="/places/delete" method="post">
+  <button type="submit" name="button">Clear All Items</button>
+</form>
